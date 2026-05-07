@@ -1,18 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
+    // Pegando os elementos do HTML 
+    const botaoMenu = document.getElementById('botaoMenu');
+    const linksNavegacao = document.getElementById('linksNavegacao');
 
-    // Alterna a visibilidade do menu no mobile
-    menuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+    // Alterna a classe 'ativo' para abrir/fechar o menu no celular
+    botaoMenu.addEventListener('click', () => {
+        linksNavegacao.classList.toggle('ativo');
     });
 
-    // Fecha o menu ao clicar em um link (opcional, melhora a UX no mobile)
-    const links = navLinks.querySelectorAll('a');
+    // Fecha o menu ao clicar em um link
+    const links = linksNavegacao.querySelectorAll('a');
     links.forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth <= 900) {
-                navLinks.classList.remove('active');
+                linksNavegacao.classList.remove('ativo');
             }
         });
     });
