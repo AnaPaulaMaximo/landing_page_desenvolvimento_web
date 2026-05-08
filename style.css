@@ -38,6 +38,11 @@ a {
 .texto-centralizado { text-align: center; }
 .apenas-mobile { display: none; }
 
+/* Garante que o container mobile não quebre nada no desktop */
+.imagem-destaque-mobile {
+    display: none;
+}
+
 /* Botões */
 .botao {
     display: inline-block;
@@ -592,5 +597,57 @@ a {
     
     body {
         padding-bottom: 80px; 
+    }
+
+    /* === Correções Específicas Mobile === */
+    
+
+    .imagem-destaque-mobile.apenas-mobile {
+        display: block !important;
+        position: relative;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .img-mobile-principal {
+        width: 100%;
+        border-radius: 16px;
+        display: block;
+    }
+
+    .citacao-sobreposta-mobile {
+        position: absolute;
+        bottom: -20px;
+        left: 5%;
+        background: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        width: 90%;
+        text-align: left;
+        z-index: 2;
+    }
+
+    .citacao-sobreposta-mobile p {
+        color: var(--cor-primaria);
+        font-weight: 500;
+        margin-bottom: 5px;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .citacao-sobreposta-mobile span {
+        font-size: 0.7rem;
+        color: var(--texto-claro);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+
+    .caixa-img-produto img.apenas-mobile {
+        display: block !important;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
